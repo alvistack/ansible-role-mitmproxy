@@ -56,6 +56,8 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
+    - { dest: "/etc/default" }
+    - { dest: "/lib/systemd/system" }
     - { dest: "/usr/local/bin" }
     - { dest: "{{ mitmproxy_download.dest | dirname }}" }
   tags: mitmproxy
@@ -79,6 +81,24 @@
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
+  notify:
+    - mitmproxy | systemctl daemon-reload
+    - mitmproxy | systemctl restart
+  tags: mitmproxy
+
+- name: copy templates
+  template:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - { dest: "/etc/default/mitmdump" }
+    - { dest: "/lib/systemd/system/mitmdump.service" }
+  notify:
+    - mitmproxy | systemctl daemon-reload
+    - mitmproxy | systemctl restart
   tags: mitmproxy
 
 - name: prepare files
@@ -89,7 +109,21 @@
     mode: "{{ item.mode | default('0644') }}"
     state: "{{ item.state | default('file') }}"
   loop:
+    - { dest: "/etc/default/mitmdump" }
+    - { dest: "/lib/systemd/system/mitmdump.service" }
     - { dest: "/usr/local/bin/mitmdump", mode: "0755" }
     - { dest: "/usr/local/bin/mitmproxy", mode: "0755" }
     - { dest: "/usr/local/bin/mitmweb", mode: "0755" }
+  tags: mitmproxy
+
+- name: flush handlers
+  meta: flush_handlers
+  tags: mitmproxy
+
+- name: enable service
+  service:
+    name: "mitmdump"
+    enabled: true
+  changed_when: false
+  ignore_errors: true
   tags: mitmproxy

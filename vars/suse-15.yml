@@ -16,8 +16,6 @@
 
 _zypper: [
   { state: "latest", name: "curl" },
-  { state: "latest", name: "glibc" },
-  { state: "latest", name: "libstdc++6" },
   { state: "latest", name: "net-tools" },
   { state: "latest", name: "wget" },
 ]

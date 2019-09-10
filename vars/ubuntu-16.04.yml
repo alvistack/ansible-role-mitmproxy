@@ -16,8 +16,6 @@
 
 _apt: [
   { state: "latest", name: "curl" },
-  { state: "latest", name: "libc6" },
-  { state: "latest", name: "libstdc++6" },
   { state: "latest", name: "net-tools" },
   { state: "latest", name: "wget" },
 ]
