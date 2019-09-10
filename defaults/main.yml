@@ -19,3 +19,6 @@ mitmproxy_version: "4.0.4"
 
 # mitmproxy download details.
 mitmproxy_download: "{{ _mitmproxy_download[mitmproxy_version] }}"
+
+# Options to pass to mitmdump.
+mitmdump_daemon_opts: "--mode transparent --showhost --ssl-insecure --anticomp"
