@@ -24,6 +24,13 @@
   remote_user: root
   become: true
   tasks:
+    - name: start service
+      service:
+        name: "mitmdump"
+        state: "started"
+      changed_when: false
+      ignore_errors: true
+
     - name: mitmproxy --version
       command: mitmproxy --version
       register: result
