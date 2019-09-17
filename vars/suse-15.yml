@@ -17,5 +17,6 @@
 _zypper: [
   { state: "latest", name: "curl" },
   { state: "latest", name: "net-tools" },
+  { state: "latest", name: "net-tools-deprecated" },
   { state: "latest", name: "wget" },
 ]
