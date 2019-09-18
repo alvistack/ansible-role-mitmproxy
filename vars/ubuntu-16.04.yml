@@ -14,8 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt: [
-  { state: "latest", name: "curl" },
-  { state: "latest", name: "net-tools" },
-  { state: "latest", name: "wget" },
-]
+_apt:
+  - { state: "latest", name: "curl" }
+  - { state: "latest", name: "net-tools" }
+  - { state: "latest", name: "wget" }
