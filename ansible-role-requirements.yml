@@ -14,31 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  become: true
-  roles:
-    - role: bootstrap
-    - role: locales
-    - role: timezone
+- name: bootstrap
+  src: https://github.com/alvistack/ansible-role-bootstrap
+  version: develop
 
-- hosts: all
-  remote_user: root
-  become: true
-  roles:
-    - role: mitmproxy
+- name: locales
+  src: https://github.com/alvistack/ansible-role-locales
+  version: develop
 
-  post_tasks:
-    - name: start service
-      service:
-        name: "mitmdump"
-        state: "started"
-      changed_when: false
-      ignore_errors: true
-
-    - name: mitmproxy --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: mitmproxy --version
-      register: result
-      changed_when: result is not succeeded
+- name: timezone
+  src: https://github.com/alvistack/ansible-role-timezone
+  version: develop
