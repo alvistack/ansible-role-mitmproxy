@@ -18,12 +18,17 @@
   remote_user: root
   become: true
   roles:
-    - role: mitmproxy
+    - role: bootstrap
+    - role: locales
+    - role: timezone
 
 - hosts: all
   remote_user: root
   become: true
-  tasks:
+  roles:
+    - role: mitmproxy
+
+  post_tasks:
     - name: start service
       service:
         name: "mitmdump"
