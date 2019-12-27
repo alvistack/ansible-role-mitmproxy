@@ -18,7 +18,7 @@ _mitmproxy_download:
   5.0.0:
     url: "https://snapshots.mitmproxy.org/5.0.0/mitmproxy-5.0.0-linux.tar.gz"
     dest: "/var/cache/ansible/mitmproxy-5.0.0-linux.tar.gz"
-    checksum: "sha1:f608b8e161331c62f461dda04415b217ebdca2bf"
+    checksum: "sha1:890983ea9ad80c3dabf132b3a5b9f58c90bdc24b"
   4.0.4:
     url: "https://snapshots.mitmproxy.org/4.0.4/mitmproxy-4.0.4-linux.tar.gz"
     dest: "/var/cache/ansible/mitmproxy-4.0.4-linux.tar.gz"
