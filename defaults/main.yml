@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # mitmproxy version.
-mitmproxy_version: "5.0.0"
+mitmproxy_version: "5.0.1"
 
 # mitmproxy download details.
 mitmproxy_download: "{{ _mitmproxy_download[mitmproxy_version] }}"
