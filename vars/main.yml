@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _mitmproxy_download:
+  5.0.1:
+    url: "https://snapshots.mitmproxy.org/5.0.1/mitmproxy-5.0.1-linux.tar.gz"
+    dest: "/var/cache/ansible/mitmproxy-5.0.1-linux.tar.gz"
+    checksum: "sha1:97e361edc53c159479594406969b21c93c86b4ca"
   5.0.0:
     url: "https://snapshots.mitmproxy.org/5.0.0/mitmproxy-5.0.0-linux.tar.gz"
     dest: "/var/cache/ansible/mitmproxy-5.0.0-linux.tar.gz"
