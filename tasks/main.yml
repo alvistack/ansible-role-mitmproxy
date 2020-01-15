@@ -78,7 +78,10 @@
   shell: |
     set -o pipefail
     cd /usr/local/bin
-    TMP_DIR="`mktemp -d`" && tar -zx -C $TMP_DIR -f {{ mitmproxy_download.dest }} && mv $TMP_DIR/* . && rm -rf $TMP_DIR
+    TMP_DIR="`mktemp -d`" \
+      && tar -zx -C $TMP_DIR -f {{ mitmproxy_download.dest }} \
+      && mv $TMP_DIR/* . \
+      && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
