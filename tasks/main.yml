@@ -80,7 +80,9 @@
     cd /usr/local/bin
     TMP_DIR="`mktemp -d`" \
       && tar -zx -C $TMP_DIR -f {{ mitmproxy_download.dest }} \
-      && mv $TMP_DIR/* . \
+      && chown root:root $TMP_DIR/mitm* \
+      && chmod 0755 $TMP_DIR/mitm* \
+      && mv $TMP_DIR/mitm* . \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
