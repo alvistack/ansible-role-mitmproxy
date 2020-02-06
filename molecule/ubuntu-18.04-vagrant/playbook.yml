@@ -36,9 +36,9 @@
       changed_when: false
       ignore_errors: true
 
-    - name: mitmproxy --version
+    - name: su -l -s /bin/bash -c 'mitmproxy --version'
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: mitmproxy --version
+      command: su -l -s /bin/bash -c 'mitmproxy --version'
       register: result
       changed_when: result is not succeeded
