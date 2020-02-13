@@ -17,9 +17,10 @@
 - hosts: all
   remote_user: root
   become: true
-  roles:
-    - role: bootstrap
-    - role: python
-    - role: locales
-    - role: timezone
-    - role: mitmproxy
+  post_tasks:
+    - name: mitmproxy --version
+      environment:
+        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      command: mitmproxy --version
+      register: result
+      changed_when: result is not succeeded

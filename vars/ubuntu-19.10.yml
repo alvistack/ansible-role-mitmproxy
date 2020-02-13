@@ -14,12 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  become: true
-  roles:
-    - role: bootstrap
-    - role: python
-    - role: locales
-    - role: timezone
-    - role: mitmproxy
+_apt:
+  - { state: "latest", name: "curl" }
+  - { state: "latest", name: "net-tools" }
+  - { state: "latest", name: "wget" }
