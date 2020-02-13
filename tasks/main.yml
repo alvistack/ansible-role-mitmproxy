@@ -124,6 +124,10 @@
     - { dest: "/usr/local/bin/mitmweb", mode: "0755" }
   tags: mitmproxy
 
+- name: flush handlers
+  meta: flush_handlers
+  tags: mitmproxy
+
 - name: enable service
   service:
     name: "mitmdump"
@@ -131,8 +135,4 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-  tags: mitmproxy
-
-- name: flush handlers
-  meta: flush_handlers
   tags: mitmproxy
