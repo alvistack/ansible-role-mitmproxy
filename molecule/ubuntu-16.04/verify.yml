@@ -17,7 +17,7 @@
 - hosts: all
   remote_user: root
   become: true
-  post_tasks:
+  tasks:
     - name: mitmproxy --version
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
