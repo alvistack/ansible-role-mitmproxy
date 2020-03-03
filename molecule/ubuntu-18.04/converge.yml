@@ -17,9 +17,18 @@
 - hosts: all
   remote_user: root
   become: true
-  roles:
-    - role: bootstrap
-    - role: python
-    - role: locales
-    - role: timezone
-    - role: mitmproxy
+  tasks:
+    - include_role:
+        name: bootstrap
+
+    - include_role:
+        name: python
+
+    - include_role:
+        name: locales
+
+    - include_role:
+        name: timezone
+
+    - include_role:
+        name: mitmproxy
