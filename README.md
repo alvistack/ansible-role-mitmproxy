@@ -1,6 +1,6 @@
 # Ansible Role for mitmproxy
 
-[![Travis](https://img.shields.io/travis/alvistack/ansible-role-mitmproxy.svg)](https://travis-ci.org/alvistack/ansible-role-mitmproxy)
+[![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-mitmproxy.svg)](https://travis-ci.com/alvistack/ansible-role-mitmproxy)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.mitmproxy-blue.svg)](https://galaxy.ansible.com/alvistack/mitmproxy)
@@ -11,7 +11,7 @@ Ansible Role for mitmproxy Installation.
 
 This role require Ansible 2.9 or higher.
 
-This role was designed for Ubuntu 16.04/18.04/19.10 or RHEL/CentOS 7 or openSUSE Leap 15.1.
+This role was designed for Ubuntu 16.04/18.04/19.10 or RHEL/CentOS 7/8 or openSUSE Leap 15.1.
 
 ## Role Variables
 
@@ -23,7 +23,7 @@ This role was designed for Ubuntu 16.04/18.04/19.10 or RHEL/CentOS 7 or openSUSE
 
 ## Example Playbook
 
-[molecule/ubuntu-18.04/playbook.yml](molecule/ubuntu-18.04/playbook.yml)
+[molecule/default/converge.yml](molecule/default/converge.yml)
 
 ## License
 
