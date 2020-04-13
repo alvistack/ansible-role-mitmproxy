@@ -15,6 +15,9 @@
 # limitations under the License.
 
 _apt:
-  - { state: "latest", name: "curl" }
-  - { state: "latest", name: "net-tools" }
-  - { state: "latest", name: "wget" }
+  - { state: "latest", name: "libffi-dev" }
+  - { state: "latest", name: "libjpeg8-dev" }
+  - { state: "latest", name: "libssl-dev" }
+  - { state: "latest", name: "libtiff5-dev" }
+  - { state: "latest", name: "libwebp-dev" }
+  - { state: "latest", name: "zlib1g-dev" }

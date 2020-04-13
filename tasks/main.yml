@@ -59,38 +59,24 @@
     - { dest: "/etc/default" }
     - { dest: "/lib/systemd/system" }
     - { dest: "/usr/local/bin" }
-    - { dest: "{{ mitmproxy_download.dest | dirname }}" }
   tags: mitmproxy
 
-- name: download archive
+- name: pip install
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   vars:
     ansible_python_interpreter: "python3"
-  get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dest }}"
-    checksum: "{{ item.checksum }}"
-    timeout: 300
-  loop:
-    - "{{ mitmproxy_download }}"
-  register: get_url_result
-  until: get_url_result is succeeded
-  tags: mitmproxy
-
-- name: unarchive package
-  shell: |
-    set -o pipefail
-    cd /usr/local/bin
-    TMP_DIR="$(mktemp -d)" \
-      && tar -zx -C $TMP_DIR -f {{ mitmproxy_download.dest }} \
-      && chown root:root $TMP_DIR/mitm* \
-      && chmod 0755 $TMP_DIR/mitm* \
-      && mv $TMP_DIR/mitm* . \
-      && rm -rf $TMP_DIR
-  args:
-    executable: "/bin/bash"
-  when: get_url_result is changed
+  pip:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(None) or omit }}"
+    version: "{{ item.version | default(None) or omit }}"
+    extra_args: "--ignore-installed --prefix=/usr/local"
+    executable: "pip3"
+  loop: "{{ _pip }}"
+  register: result
+  until: result is succeeded
+  changed_when: result is not succeeded
   notify:
-    - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart
   tags: mitmproxy
 

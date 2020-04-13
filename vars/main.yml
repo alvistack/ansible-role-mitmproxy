@@ -14,16 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mitmproxy_download:
-  5.0.1:
-    url: "https://snapshots.mitmproxy.org/5.0.1/mitmproxy-5.0.1-linux.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-5.0.1-linux.tar.gz"
-    checksum: "sha1:97e361edc53c159479594406969b21c93c86b4ca"
-  5.0.0:
-    url: "https://snapshots.mitmproxy.org/5.0.0/mitmproxy-5.0.0-linux.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-5.0.0-linux.tar.gz"
-    checksum: "sha1:890983ea9ad80c3dabf132b3a5b9f58c90bdc24b"
-  4.0.4:
-    url: "https://snapshots.mitmproxy.org/4.0.4/mitmproxy-4.0.4-linux.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-4.0.4-linux.tar.gz"
-    checksum: "sha1:4115a67410f6dc7b1ef7f0d7b353bc74c890c600"
+_pip:
+  - { state: "latest", name: "mitmproxy" }

@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _yum:
-  - { state: "latest", name: "curl" }
-  - { state: "latest", name: "net-tools" }
-  - { state: "latest", name: "wget" }
+  - { state: "latest", name: "libffi-devel" }
+  - { state: "latest", name: "libjpeg-devel" }
+  - { state: "latest", name: "libtiff-devel" }
+  - { state: "latest", name: "libwebp-devel" }
+  - { state: "latest", name: "openjpeg2-devel", enablerepo: "PowerTools" }
+  - { state: "latest", name: "openssl-devel" }
+  - { state: "latest", name: "zlib-devel" }
