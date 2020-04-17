@@ -77,7 +77,7 @@
   until: result is succeeded
   changed_when: result is not succeeded
   notify:
-    - mitmproxy | systemctl restart
+    - mitmproxy | systemctl restart mitmdump
   tags: mitmproxy
 
 - name: copy templates
@@ -92,7 +92,7 @@
     - { dest: "/lib/systemd/system/mitmdump.service" }
   notify:
     - mitmproxy | systemctl daemon-reload
-    - mitmproxy | systemctl restart
+    - mitmproxy | systemctl restart mitmdump
   tags: mitmproxy
 
 - name: prepare files

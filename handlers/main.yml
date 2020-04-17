@@ -20,7 +20,7 @@
   changed_when: false
   ignore_errors: true
 
-- name: mitmproxy | systemctl restart
+- name: mitmproxy | systemctl restart mitmdump
   service:
     name: "mitmdump"
     state: "restarted"
