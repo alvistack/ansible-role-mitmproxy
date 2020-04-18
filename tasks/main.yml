@@ -114,7 +114,7 @@
   meta: flush_handlers
   tags: mitmproxy
 
-- name: start service
+- name: systemctl start mitmdump
   service:
     name: "mitmdump"
     state: "started"
