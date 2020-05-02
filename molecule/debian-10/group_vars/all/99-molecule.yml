@@ -13,11 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_apt:
-  - { state: "latest", name: "libffi-dev" }
-  - { state: "latest", name: "libjpeg-dev" }
-  - { state: "latest", name: "libssl-dev" }
-  - { state: "latest", name: "libtiff5-dev" }
-  - { state: "latest", name: "libwebp-dev" }
-  - { state: "latest", name: "zlib1g-dev" }
