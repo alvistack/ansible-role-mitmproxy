@@ -16,7 +16,7 @@
 
 _apt:
   - { state: "latest", name: "libffi-dev" }
-  - { state: "latest", name: "libjpeg8-dev" }
+  - { state: "latest", name: "libjpeg-dev" }
   - { state: "latest", name: "libssl-dev" }
   - { state: "latest", name: "libtiff5-dev" }
   - { state: "latest", name: "libwebp-dev" }
