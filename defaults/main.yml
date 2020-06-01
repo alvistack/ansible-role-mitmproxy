@@ -14,5 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# mitmproxy version.
+mitmproxy_version: "5.1.1"
+
+# mitmproxy download details.
+mitmproxy_download: "{{ _mitmproxy_download[mitmproxy_version] }}"
+
 # Options to pass to mitmdump.
 mitmdump_daemon_opts: "--mode transparent --showhost"
