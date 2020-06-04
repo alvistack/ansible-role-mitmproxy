@@ -13,12 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_yum:
-  - { state: "latest", name: "libffi-devel" }
-  - { state: "latest", name: "libjpeg-devel" }
-  - { state: "latest", name: "libtiff-devel" }
-  - { state: "latest", name: "libwebp-devel" }
-  - { state: "latest", name: "openjpeg2-devel" }
-  - { state: "latest", name: "openssl-devel" }
-  - { state: "latest", name: "zlib-devel" }
