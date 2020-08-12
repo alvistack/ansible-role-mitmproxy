@@ -15,7 +15,11 @@
 # limitations under the License.
 
 _mitmproxy_download:
-  5.1.1:
+  "5.2":
+    url: "https://snapshots.mitmproxy.org/5.2/mitmproxy-5.2-linux.tar.gz"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-5.2-linux.tar.gz"
+    checksum: "sha1:82cbbf1fe425fcc32ef01ef4a26ece650f5ca734"
+  "5.1.1":
     url: "https://snapshots.mitmproxy.org/5.1.1/mitmproxy-5.1.1-linux.tar.gz"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-5.1.1-linux.tar.gz"
     checksum: "sha1:ce471ab53622a4952601421f6fdaf6dcd86267ed"
