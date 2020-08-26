@@ -3,6 +3,8 @@
 [Unit]
 Description=mitmdump: An interactive TLS-capable intercepting HTTP proxy
 Documentation=https://docs.mitmproxy.org/
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 EnvironmentFile=-/etc/default/mitmdump

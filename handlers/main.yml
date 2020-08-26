@@ -20,9 +20,9 @@
   changed_when: false
   ignore_errors: true
 
-- name: mitmproxy | systemctl restart mitmdump
+- name: mitmproxy | systemctl restart mitmdump.service
   service:
-    name: "mitmdump"
+    name: "mitmdump.service"
     state: "restarted"
     enabled: true
   loop: "{{ ansible_play_hosts }}"
