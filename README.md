@@ -1,7 +1,7 @@
 # Ansible Role for mitmproxy
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-mitmproxy.svg)](https://travis-ci.com/alvistack/ansible-role-mitmproxy)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.mitmproxy-blue.svg)](https://galaxy.ansible.com/alvistack/mitmproxy)
 
