@@ -123,6 +123,9 @@
     - { dest: "/usr/local/bin/mitmdump", mode: "0755" }
     - { dest: "/usr/local/bin/mitmproxy", mode: "0755" }
     - { dest: "/usr/local/bin/mitmweb", mode: "0755" }
+  notify:
+    - mitmproxy | systemctl daemon-reload
+    - mitmproxy | systemctl restart mitmdump.service
   tags: mitmproxy
 
 - name: systemctl start mitmdump.service
