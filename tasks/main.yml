@@ -16,7 +16,6 @@
 
 - name: include default variables
   include_vars: "../vars/main.yml"
-  tags: mitmproxy
 
 - name: include release specific variables
   include_vars: "{{ lookup('first_found', _params) }}"
@@ -31,7 +30,6 @@
       paths:
         - "../vars"
   ignore_errors: true
-  tags: mitmproxy
 
 - name: include release specific tasks
   include_tasks: "{{ lookup('first_found', _params) }}"
@@ -46,7 +44,6 @@
       paths:
         - "."
   ignore_errors: true
-  tags: mitmproxy
 
 - name: prepare directories
   file:
@@ -60,7 +57,6 @@
     - { dest: "/lib/systemd/system" }
     - { dest: "/usr/local/bin" }
     - { dest: "{{ mitmproxy_download.dest | dirname }}" }
-  tags: mitmproxy
 
 - name: download archive
   vars:
@@ -75,7 +71,6 @@
     - "{{ mitmproxy_download }}"
   register: get_url_result
   until: get_url_result is succeeded
-  tags: mitmproxy
 
 - name: unarchive package
   shell: |
@@ -93,7 +88,6 @@
   notify:
     - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart mitmdump.service
-  tags: mitmproxy
 
 - name: copy templates
   template:
@@ -108,7 +102,6 @@
   notify:
     - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart mitmdump.service
-  tags: mitmproxy
 
 - name: prepare files
   file:
@@ -126,7 +119,6 @@
   notify:
     - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart mitmdump.service
-  tags: mitmproxy
 
 - name: systemctl start mitmdump.service
   service:
@@ -135,8 +127,6 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-  tags: mitmproxy
 
 - name: flush handlers
   meta: flush_handlers
-  tags: mitmproxy
