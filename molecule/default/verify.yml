@@ -21,6 +21,10 @@
     - name: mitmproxy --version
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: mitmproxy --version
+      shell: |
+        set -o pipefail
+        LANG=en_US.UTF-8 mitmproxy --version
+      args:
+        executable: "/bin/bash"
       register: result
       changed_when: result is not succeeded
