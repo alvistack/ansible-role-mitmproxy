@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _mitmproxy_download:
+  "6.0.2":
+    url: "https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-6.0.2-linux.tar.gz"
+    checksum: "sha1:94d126e6c0d257c61548f58ba45991b43a9e7e0c"
   "6.0.1":
     url: "https://snapshots.mitmproxy.org/6.0.1/mitmproxy-6.0.1-linux.tar.gz"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/mitmproxy-6.0.1-linux.tar.gz"
