@@ -16,14 +16,14 @@
 
 _mitmproxy_download:
   "6.0.2":
-    url: "https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz"
+    url: "http://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz"
     dest: "/var/cache/ansible/86e96c9a6f50f2863e69dcdfe91c38b4f0844ee1ab0037373689db8aaacb5191/mitmproxy-6.0.2-linux.tar.gz"
     checksum: "sha256:86e96c9a6f50f2863e69dcdfe91c38b4f0844ee1ab0037373689db8aaacb5191"
   "6.0.1":
-    url: "https://snapshots.mitmproxy.org/6.0.1/mitmproxy-6.0.1-linux.tar.gz"
+    url: "http://snapshots.mitmproxy.org/6.0.1/mitmproxy-6.0.1-linux.tar.gz"
     dest: "/var/cache/ansible/556849e9ca0249ca1118e6c995e4c857a62ba68b0de7367df757daaa807d8dc8/mitmproxy-6.0.1-linux.tar.gz"
     checksum: "sha256:556849e9ca0249ca1118e6c995e4c857a62ba68b0de7367df757daaa807d8dc8"
   "6.0.0":
-    url: "https://snapshots.mitmproxy.org/6.0.0/mitmproxy-6.0.0-linux.tar.gz"
+    url: "http://snapshots.mitmproxy.org/6.0.0/mitmproxy-6.0.0-linux.tar.gz"
     dest: "/var/cache/ansible/fb16111f32e28eb6c62ed9876593739038989d73f4e6de5f017339ea85208209/mitmproxy-6.0.0-linux.tar.gz"
     checksum: "sha256:fb16111f32e28eb6c62ed9876593739038989d73f4e6de5f017339ea85208209"
