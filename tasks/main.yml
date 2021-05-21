@@ -60,8 +60,8 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/etc/default" }
-    - { dest: "/lib/systemd/system" }
     - { dest: "/usr/local/bin" }
+    - { dest: "/usr/local/lib/systemd/system" }
 
 - name: download archive
   shell: |
@@ -109,7 +109,7 @@
     mode: "{{ item.mode | default('0644') }}"
   loop:
     - { dest: "/etc/default/mitmdump" }
-    - { dest: "/lib/systemd/system/mitmdump.service" }
+    - { dest: "/usr/local/lib/systemd/system/mitmdump.service" }
   notify:
     - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart mitmdump.service
@@ -123,10 +123,11 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/etc/default/mitmdump" }
-    - { dest: "/lib/systemd/system/mitmdump.service" }
+    - { dest: "/lib/systemd/system/mitmdump.service", state: "absent" }
     - { dest: "/usr/local/bin/mitmdump", mode: "0755" }
     - { dest: "/usr/local/bin/mitmproxy", mode: "0755" }
     - { dest: "/usr/local/bin/mitmweb", mode: "0755" }
+    - { dest: "/usr/local/lib/systemd/system/mitmdump.service" }
   notify:
     - mitmproxy | systemctl daemon-reload
     - mitmproxy | systemctl restart mitmdump.service
