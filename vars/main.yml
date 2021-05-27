@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_mitmproxy_version:
+  "6.0": "6.0.2"
+
 _mitmproxy_download:
   "6.0.2":
     url: "http://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz"

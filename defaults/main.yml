@@ -14,8 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# mitmproxy release.
+mitmproxy_release: "6.0"
+
 # mitmproxy version.
-mitmproxy_version: "6.0.2"
+mitmproxy_version: "{{ _mitmproxy_version[mitmproxy_release] }}"
 
 # mitmproxy download details.
 mitmproxy_download: "{{ _mitmproxy_download[mitmproxy_version] }}"
