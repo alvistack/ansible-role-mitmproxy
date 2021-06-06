@@ -22,7 +22,7 @@
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       shell: |
-        set -euo pipefail
+        set -euxo pipefail
         LANG=en_US.UTF-8 mitmproxy --version
       args:
         executable: "/bin/bash"
