@@ -13,18 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-- hosts: all
-  remote_user: root
-  become: true
-  tasks:
-    - name: mitmproxy --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      shell: |
-        set -euxo pipefail
-        LANG=en_US.UTF-8 mitmproxy --version
-      args:
-        executable: "/bin/bash"
-      register: result
-      changed_when: result is not succeeded
