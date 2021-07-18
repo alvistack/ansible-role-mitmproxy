@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # mitmproxy release.
-mitmproxy_release: "6.0"
+mitmproxy_release: "7.0"
 
 # mitmproxy version.
 mitmproxy_version: "{{ _mitmproxy_version[mitmproxy_release] }}"

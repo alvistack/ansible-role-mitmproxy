@@ -15,9 +15,14 @@
 # limitations under the License.
 
 _mitmproxy_version:
+  "7.0": "7.0.0"
   "6.0": "6.0.2"
 
 _mitmproxy_download:
+  "7.0.0":
+    url: "http://snapshots.mitmproxy.org/7.0.0/mitmproxy-7.0.0-linux.tar.gz"
+    dest: "/var/cache/ansible/9d5d2062f1616b4c309ca581595ebc993bb2d9024441b4450987d86f794fef13/mitmproxy-7.0.0-linux.tar.gz"
+    checksum: "9d5d2062f1616b4c309ca581595ebc993bb2d9024441b4450987d86f794fef13"
   "6.0.2":
     url: "http://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz"
     dest: "/var/cache/ansible/86e96c9a6f50f2863e69dcdfe91c38b4f0844ee1ab0037373689db8aaacb5191/mitmproxy-6.0.2-linux.tar.gz"
