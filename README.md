@@ -1,5 +1,7 @@
 # Ansible Role for mitmproxy
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-mitmproxy/master)](https://gitlab.com/alvistack/ansible-role-mitmproxy/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mitmproxy.svg)](https://github.com/alvistack/ansible-role-mitmproxy/blob/master/LICENSE)
