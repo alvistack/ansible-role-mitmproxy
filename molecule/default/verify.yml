@@ -21,7 +21,7 @@
     - name: mitmproxy --version
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      shell: |
+      ansible.builtin.shell: |
         set -euxo pipefail
         LANG=en_US.UTF-8 mitmproxy --version
       args:
