@@ -15,13 +15,13 @@
 # limitations under the License.
 
 - name: mitmproxy | systemctl daemon-reload
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: true
   changed_when: false
   failed_when: false
 
 - name: mitmproxy | systemctl restart mitmdump.service
-  service:
+  ansible.builtin.service:
     name: "mitmdump.service"
     state: "restarted"
     enabled: true
