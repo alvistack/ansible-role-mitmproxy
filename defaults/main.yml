@@ -15,13 +15,10 @@
 # limitations under the License.
 
 # mitmproxy release.
-mitmproxy_release: "8.0"
+mitmproxy_release: "{{ _mitmproxy_release }}"
 
 # mitmproxy version.
 mitmproxy_version: "{{ _mitmproxy_version[mitmproxy_release] }}"
-
-# mitmproxy download details.
-mitmproxy_download: "{{ _mitmproxy_download[mitmproxy_version] }}"
 
 # Options to pass to mitmdump.
 mitmdump_daemon_opts: "--mode transparent --showhost"
