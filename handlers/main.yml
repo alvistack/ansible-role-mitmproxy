@@ -13,14 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-- name: mitmproxy | systemctl restart mitmdump.service
-  ansible.builtin.service:
-    name: "mitmdump.service"
-    state: "restarted"
-    enabled: true
-  loop: "{{ ansible_play_hosts }}"
-  delegate_to: "{{ item }}"
-  run_once: true
-  changed_when: false
-  failed_when: false

@@ -50,8 +50,6 @@
   loop: "{{ _apt }}"
   register: result
   until: result is succeeded
-  notify:
-    - mitmproxy | systemctl restart mitmdump.service
 
 - name: apt-mark hold
   ansible.builtin.dpkg_selections:

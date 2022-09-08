@@ -23,14 +23,3 @@
       ansible.builtin.command: mitmproxy --version
       register: result
       changed_when: result is not succeeded
-
-    - name: check port
-      ansible.builtin.wait_for:
-        port: 8080
-        timeout: 300
-        delay: 10
-      async: 300
-      poll: 10
-      register: result
-      until: result is succeeded
-      retries: 30

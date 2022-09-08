@@ -53,8 +53,6 @@
   loop: "{{ _yum }}"
   register: result
   until: result is succeeded
-  notify:
-    - mitmproxy | systemctl restart mitmdump.service
 
 - name: yum versionlock add
   community.general.yum_versionlock:
