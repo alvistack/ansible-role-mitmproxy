@@ -1,9 +1,14 @@
 # Ansible Role for mitmproxy
 
-## 6.4.0 - TBC
+## 6.5.0 - TBC
 
 ### Major Changes
 
+## 6.4.0 - 2022-09-15
+
+### Major Changes
+
+  - Support Ansible community package 6.4.0
   - Revamp manually download related with OBS repo
 
 ## 6.3.0 - 2022-08-24
