@@ -21,4 +21,4 @@ mitmproxy_release: "{{ _mitmproxy_release }}"
 mitmproxy_version: "{{ _mitmproxy_version[mitmproxy_release] }}"
 
 # Options to pass to mitmdump.
-mitmdump_daemon_opts: "--mode transparent --showhost"
+mitmdump_daemon_opts: --mode transparent --showhost
