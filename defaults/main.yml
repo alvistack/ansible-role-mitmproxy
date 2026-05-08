@@ -18,4 +18,4 @@
 mitmproxy_release: "{{ _mitmproxy_release }}"
 
 # mitmproxy version.
-mitmproxy_version: "{{ _mitmproxy_version[mitmproxy_release] }}"
+mitmproxy_version: "{{ _mitmproxy_version }}"
